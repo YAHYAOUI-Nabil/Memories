@@ -1,0 +1,14 @@
+{
+  "name": "memories",
+  "version": "1.0.0",
+  "description": "Memories app using MERN STACK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nabil Yahyaoui",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
