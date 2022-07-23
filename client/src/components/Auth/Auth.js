@@ -9,6 +9,7 @@ import {gapi} from 'gapi-script'
 import useStyles from './styles'
 import Input from './Input'
 import Icon from './Icon'
+import {signin, signup} from '../../actions/auth'
 
 
 const Auth = () => {
@@ -17,6 +18,8 @@ const Auth = () => {
     const [showPassword, setshowPassword] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
+    const initialState= {firstName:'', lastName:'', email:'', password:'', confirmPassword:''}
+    const [formData, setformData] = useState(initialState)
 
     const handleShowPassword = () => {
         setshowPassword((prevShowPwd)=> !prevShowPwd)
@@ -26,8 +29,22 @@ const Auth = () => {
         setisSignup((isSignup)=>!isSignup)
     }
 
-    const handleSubmit = () => {}
-    const handleChange = () => {}
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if(isSignup){
+            dispatch(signup(formData, history), history)
+            
+        }else{
+            const userData = {
+                email : formData.email,
+                password : formData.password
+            }
+            dispatch(signin(userData, history), history)
+        }
+    }
+    const handleChange = (e) => {
+        setformData({...formData, [e.target.name]:e.target.value,})
+    }
 
     const googleSuccess = async (res) => {
         const result = res?.profileObj

@@ -1,12 +1,13 @@
 const express = require('express')
 const router = express.Router()
 const postsControllers = require('../controllers/postsControllers')
+const auth = require('../middlewares/auth')
 
 router.get('/', postsControllers.getPosts)
 router.get('/:id', postsControllers.getPost)
-router.post('/', postsControllers.createPost)
-router.delete('/:id', postsControllers.deletePost)
-router.put('/:id', postsControllers.updatePost)
-router.patch('/likes/:id', postsControllers.likePost)
+router.post('/', auth, postsControllers.createPost)
+router.delete('/:id', auth, postsControllers.deletePost)
+router.put('/:id', auth, postsControllers.updatePost)
+router.patch('/likes/:id', auth, postsControllers.likePost)
 
 module.exports = router

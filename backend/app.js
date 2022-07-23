@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config()
 const app = express()
 
 const postsRoutes = require('./routes/postsRoutes')
+const usersRoutes = require('./routes/usersRoutes')
 const port = process.env.PORT || 5000
 const connectDB = require('./config/db')
 
@@ -21,5 +22,7 @@ app.use(bodyParser.urlencoded({limit : '30mb', extended : true}))
 connectDB()
 
 app.use('/memories/posts', postsRoutes)
+app.use('/memories/auth', usersRoutes)
+
 
 app.listen(port, () => console.log(`server started on port ${port}`))
