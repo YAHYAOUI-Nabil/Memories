@@ -21,9 +21,10 @@ exports.signin = async(req, res) => {
         const token = jwt.sign({email, id:userExist._id}, process.env.TOKEN_SECRET, {expiresIn:'999 days'})
 
         return res.status(200).json({
-                    message : 'User logged in.',
-                    username : userExist.name,
-                    email,
+                    result : {message : 'User logged in.',
+                    userId : userExist._id,
+                    name : userExist.name,
+                    email},
                     token
                 })
     } catch (error) {
@@ -67,9 +68,10 @@ exports.signup = async(req, res) => {
         const token = await jwt.sign({email, id:user._id}, process.env.TOKEN_SECRET, {expiresIn:'999 days'})
         
         return res.status(201).json({
-                message : 'User created.',
-                username : user.name,
-                email,
+                result : {message : 'User created.',
+                userId : user._id,
+                name : user.name,
+                email},
                 token
             })
         

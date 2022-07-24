@@ -32,14 +32,13 @@ const Auth = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(isSignup){
-            dispatch(signup(formData, history), history)
-            
+            dispatch(signup(formData, history)) 
         }else{
             const userData = {
                 email : formData.email,
                 password : formData.password
             }
-            dispatch(signin(userData, history), history)
+            dispatch(signin(userData, history))
         }
     }
     const handleChange = (e) => {
