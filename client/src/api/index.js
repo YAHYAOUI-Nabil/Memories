@@ -12,7 +12,7 @@ API.interceptors.request.use((req) => {
     return req
 })
 
-export const fetchPosts = () => axios.get(URI)
+export const fetchPosts = () => API.get(URI)
 export const createPost = (newPost) => API.post(URI, newPost)
 export const likePost = (id) => API.patch(`${URI}/likes/${id}`)
 export const updatePost = (id, updatedPost) => API.put(`${URI}/${id}`, updatedPost)
@@ -20,3 +20,5 @@ export const deletePost = (id) => API.delete(`${URI}/${id}`)
 
 export const signin = (formData) => axios.post(`${auth_URI}/signin`, formData)
 export const signup = (formData) => axios.post(`${auth_URI}/signup`, formData)
+
+export const fetchPostsBySearch = (searchQuery) => API.get(`${URI}/search?searchQuery=${searchQuery.search || 'none'}&tags=${searchQuery.tags}`)
