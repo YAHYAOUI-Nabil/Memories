@@ -12,7 +12,8 @@ API.interceptors.request.use((req) => {
     return req
 })
 
-export const fetchPosts = () => API.get(URI)
+export const fetchPosts = (page) => API.get(`${URI}?page=${page}`)
+export const fetchPost = (id) => API.get(`${URI}/${id}`)
 export const createPost = (newPost) => API.post(URI, newPost)
 export const likePost = (id) => API.patch(`${URI}/likes/${id}`)
 export const updatePost = (id, updatedPost) => API.put(`${URI}/${id}`, updatedPost)

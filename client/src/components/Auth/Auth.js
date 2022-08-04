@@ -1,10 +1,10 @@
 import { Avatar, Button, Container, Grid, Paper, Typography } from '@material-ui/core'
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import {GoogleLogin} from 'react-google-login'
-import {gapi} from 'gapi-script'
+// import {gapi} from 'gapi-script'
 
 import useStyles from './styles'
 import Input from './Input'
