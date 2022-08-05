@@ -16,6 +16,7 @@ export const fetchPosts = (page) => API.get(`${URI}?page=${page}`)
 export const fetchPost = (id) => API.get(`${URI}/${id}`)
 export const createPost = (newPost) => API.post(URI, newPost)
 export const likePost = (id) => API.patch(`${URI}/likes/${id}`)
+export const commentPost = (value, id) => API.post(`${URI}/comments/${id}`, {value})
 export const updatePost = (id, updatedPost) => API.put(`${URI}/${id}`, updatedPost)
 export const deletePost = (id) => API.delete(`${URI}/${id}`)
 
