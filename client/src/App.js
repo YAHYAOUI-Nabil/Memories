@@ -9,6 +9,7 @@ import PostDetails from './components/PostDetails/PostDetails'
 
 const App = () => {
   const user = localStorage.getItem('profile')
+  console.log(user)
   
   return (
     <BrowserRouter>

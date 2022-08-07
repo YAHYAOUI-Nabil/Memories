@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import {GoogleLogin} from 'react-google-login'
-// import {gapi} from 'gapi-script'
+import {gapi} from 'gapi-script'
 
 import useStyles from './styles'
 import Input from './Input'

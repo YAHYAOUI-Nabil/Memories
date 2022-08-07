@@ -19,11 +19,11 @@ const PostDetails = () => {
     if(post){
       dispatch(getPostsBySearch({search : 'none', tags : post?.tags.join(',')}))
     }
-  }, [post])
+  }, [post, dispatch])
 
   useEffect(() => {
     dispatch(getPost(id))
-  }, [id])
+  }, [id, dispatch])
 
   if(!post) return null
 
