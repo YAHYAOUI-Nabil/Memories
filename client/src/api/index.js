@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const API = axios.create({baseURL : `http://localhost:5000`})
+// const API = axios.create({baseURL : `http://localhost:5000`})
+const API = axios.create()
 const URI ='/memories/posts'
 const auth_URI = `/memories/auth`
 
