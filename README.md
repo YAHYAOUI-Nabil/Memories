@@ -36,7 +36,7 @@
 ## 2. Installation <a name="heading--2"/>
 
 ```
-git clone https://github.com/YAHYAOUI-Nabil/bloobloom-test.git
+git clone https://github.com/YAHYAOUI-Nabil/Memories.git
 npm install
 npm start
 ```
